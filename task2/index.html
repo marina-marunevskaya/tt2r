@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./index.css">
+        <title>Task 2</title>
+    </head>
+    <body>
+        <form>
+            <h1>
+                Фильтры
+            </h1>
+            <fieldset class="field-wrapper">
+                <legend>
+                    Размер
+                </legend>
+                <ul class="fields">
+                    <li class="field">
+                        <label for="size-s">
+                            <input type="radio" id="size-s" name="size" value="S">
+                            S
+                        </label>
+                    </li>
+                    <li class="field">
+                        <label for="size-m">
+                            <input type="radio" id="size-m" name="size" value="M">
+                            M
+                        </label>
+                    </li>
+                    <li class="field">
+                        <label for="size-l">
+                            <input type="radio" id="size-l" name="size" value="L">
+                            L
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset class="field-wrapper">
+                <legend>
+                    Цвет
+                </legend>
+                <ul class="fields">
+                    <li class="field">
+                        <label for="color-1">
+                            <input type="checkbox" id="color-1" name="color" value="1">
+                            1
+                        </label>
+                    </li>
+                    <li class="field">
+                        <label for="color-2">
+                            <input type="checkbox" id="color-2" name="color" value="2">
+                            2
+                        </label>
+                    </li>
+                    <li class="field">
+                        <label for="color-3">
+                            <input type="checkbox" id="color-3" name="color" value="3">
+                            3
+                        </label>
+                    </li>
+                    <li class="field">
+                        <label for="color-4">
+                            <input type="checkbox" id="color-4" name="color" value="4">
+                            4
+                        </label>
+                    </li>
+                    <li class="field">
+                        <label for="color-5">
+                            <input type="checkbox" id="color-5" name="color" value="5">
+                            5
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <div class="field-wrapper">
+                <label class="select-label" for="manufacturerInput">
+                    Производитель
+                </label>
+                <select class="select" id="manufacturerInput" name="manufacturer" multiple>
+                    <option class="select-option" value="aaa">aaa</option>
+                    <option class="select-option" value="b&c">b&c</option>
+                    <option class="select-option" value="ddd">ddd</option>
+                    <option class="select-option" value="eee">eee</option>
+                </select>
+            </div>
+
+            <div class="field-wrapper">
+                <label for="saleInput">
+                    Распродажа
+                </label>
+                <input type="checkbox" id="saleInput" name="sale" value="1">
+            </div>
+        </form>
+        <script src="./searchParams.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
