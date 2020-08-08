@@ -1,0 +1,13 @@
+{
+  "name": "task6",
+  "version": "1.0.0",
+  "description": "A test React website",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE"
+}
