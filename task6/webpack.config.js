@@ -1,13 +1,16 @@
+const webpack = require('webpack');
+
 module.exports = {
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true
     },
     entry: './src/index.js',
     module: {
         rules: [
             {
                 exclude: /node_modules/,
-                test: /\.(js)$/,
+                test: /\.(js|jsx)$/,
                 use: ['babel-loader']
             }
         ]
@@ -17,10 +20,14 @@ module.exports = {
         path: __dirname + '/dist',
         publicPath: '/'
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
     resolve: {
         extensions: [
             '*',
-            '.js'
+            '.js',
+            '.jsx'
         ]
     }
 };
