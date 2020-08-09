@@ -1,13 +1,15 @@
 import React from 'react';
 
+import { EmployeesList } from '../../components/EmployeesList';
 import { useTitle } from '../../hooks';
 
-export const Employees = () => {
+export const Employees = ({
+    deleteEmployee,
+    employees
+}) => {
     useTitle('Сотрудники');
 
     return (
-        <div>
-            Сотрудники
-        </div>
+        <EmployeesList deleteEmployee={deleteEmployee} employees={employees} />
     );
 };

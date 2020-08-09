@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
-import { loadEmployees } from '../actions/employeesActions';
+import { loadEmployees, deleteEmployee } from '../actions/employeesActions';
 import { Employees } from '../pages/Employees';
 import { Home } from '../pages/Home';
 
 const DefaultApp = ({
+    deleteEmployee,
     employees,
     loadEmployees,
     requestErrorMessage,
@@ -39,7 +40,7 @@ const DefaultApp = ({
                     <Home />
                 </Route>
                 <Route path="/employees">
-                    <Employees />
+                    <Employees deleteEmployee={deleteEmployee} employees={employees} />
                 </Route>
             </Switch>
         </BrowserRouter>
@@ -53,6 +54,7 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = {
+    deleteEmployee,
     loadEmployees
 };
 
