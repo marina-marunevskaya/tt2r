@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
+import { EmployeeForm } from '../../components/EmployeeForm';
 import { EmployeesList } from '../../components/EmployeesList';
 import { useTitle } from '../../hooks';
 
 export const Employees = ({
+    addEmployee,
     deleteEmployee,
     employees
 }) => {
     useTitle('Сотрудники');
 
     return (
-        <EmployeesList deleteEmployee={deleteEmployee} employees={employees} />
+        <Fragment>
+            <EmployeeForm addEmployee={addEmployee} />
+            <EmployeesList deleteEmployee={deleteEmployee} employees={employees} />
+        </Fragment>
     );
 };
