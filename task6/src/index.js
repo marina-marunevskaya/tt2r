@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider} from 'react-redux';
 
-const text = 'It works';
+import { App } from './App';
+import { store } from './store/configureStore';
 
 ReactDOM.render(
-    <div>{text}</div>,
+    <Provider store={ store }>
+        <App />
+    </Provider>,
     document.getElementById('app')
 );
