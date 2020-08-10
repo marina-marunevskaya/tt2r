@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
-import { loadEmployees, deleteEmployee, addEmployee } from '../actions/employeesActions';
+import { addEmployee, deleteEmployee, loadEmployees } from '../actions/employeesActions';
 import { Employees } from '../pages/Employees';
 import { Home } from '../pages/Home';
 
