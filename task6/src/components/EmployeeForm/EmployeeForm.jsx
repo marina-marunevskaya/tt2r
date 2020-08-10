@@ -37,28 +37,32 @@ export const EmployeeForm = ({
     );
 
     return (
-        <form onSubmit={onSubmit}>
-            <div>
-                <label htmlFor="firstName">Имя</label>
-                <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    onChange={onChange}
-                    value={firstName}
-                />
-            </div>
-            <div>
-                <label htmlFor="lastName">Фамилия</label>
-                <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    onChange={onChange}
-                    value={lastName}
-                />
-            </div>
-            <button type="button" onClick={addItem}>Добавить</button>
-        </form>
+        <div className="container my-2">
+            <form className="form" onSubmit={onSubmit}>
+                <div className="field-wrapper">
+                    <label className="field-label" htmlFor="firstName">Имя</label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        className="field"
+                        name="firstName"
+                        onChange={onChange}
+                        value={firstName}
+                    />
+                </div>
+                <div className="field-wrapper">
+                    <label className="field-label" htmlFor="lastName">Фамилия</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        className="field"
+                        name="lastName"
+                        onChange={onChange}
+                        value={lastName}
+                    />
+                </div>
+                <button type="button" className="button" onClick={addItem}>Добавить</button>
+            </form>
+        </div>
     );
 };

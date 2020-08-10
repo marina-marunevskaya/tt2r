@@ -6,22 +6,25 @@ export const EmployeesList = ({
     deleteEmployee,
     employees
 }) => (
-    employees.length
-        ? (
-            <ul>
-                {employees.map(
-                    employee => <EmployeeItem
-                        deleteEmployee={deleteEmployee}
-                        id={employee.id}
-                        key={employee.id}
-                        name={`${employee.first_name} ${employee.last_name}`}
-                    />
-                )}
-            </ul>
-        )
-        : (
-            <p>
-                Список сотрудников пуст
-            </p>
-        )
+    <div className="container my-2">
+        {employees.length
+            ? (
+                <ul>
+                    {employees.map(
+                        employee => <EmployeeItem
+                            deleteEmployee={deleteEmployee}
+                            id={employee.id}
+                            key={employee.id}
+                            name={`${employee.first_name} ${employee.last_name}`}
+                        />
+                    )}
+                </ul>
+            )
+            : (
+                <p className="message">
+                    Список сотрудников пуст
+                </p>
+            )
+        }
+    </div>
 );

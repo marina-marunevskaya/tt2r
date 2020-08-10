@@ -6,7 +6,7 @@ export const Home = () => {
     useTitle('Главная');
 
     return (
-        <div>
+        <div className="container my-2 home">
             Главная
         </div>
     );

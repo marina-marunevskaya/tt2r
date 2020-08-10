@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
 
 import { addEmployee, deleteEmployee, loadEmployees } from '../actions/employeesActions';
+import { ErrorMessage } from '../components/ErrorMessage';
 import { Employees } from '../pages/Employees';
 import { Home } from '../pages/Home';
 
@@ -24,17 +25,35 @@ const DefaultApp = ({
     return (
         <BrowserRouter>
             <header>
-                <nav>
-                    <ul>
+                <nav className="container">
+                    <ul className="navigation__menu">
                         <li>
-                            <Link to="/">Главная</Link>
+                            <NavLink
+                                activeClassName="navigation__link--current"
+                                className="navigation__link"
+                                isActive={({ isExact }) => isExact}
+                                to="/"
+                            >
+                                Главная
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/employees">Сотрудники</Link>
+                            <NavLink
+                                activeClassName="navigation__link--current"
+                                className="navigation__link"
+                                to="/employees"
+                            >
+                                Сотрудники
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
             </header>
+
+            <div className="container">
+                <ErrorMessage message={requestErrorMessage} status={status} />
+            </div>
+
 
             <Switch>
                 <Route exact path="/">
