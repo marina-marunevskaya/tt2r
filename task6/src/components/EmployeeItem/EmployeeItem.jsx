@@ -12,11 +12,11 @@ export const EmployeeItem = ({
 
     return (
         <li>
-            <span>
-                {name}
-            </span>
             <div>
-                <button onClick={deleteItem}>Удалить</button>
+                {name}
+            </div>
+            <div>
+                <button type="button" onClick={deleteItem}>Удалить</button>
             </div>
         </li>
     );
