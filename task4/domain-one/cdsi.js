@@ -2,11 +2,11 @@ class CrossDomainStorageInteraction {
     constructor (parentWindow, iframe, onMessage) {
         this.iframeWindow = iframe.contentWindow;
 
-        parentWindow.addEventListener('message', event => onMessage(JSON.parse(event.data)));
+        parentWindow.addEventListener('message', event => onMessage(event.data));
     }
 
     sendMessage (data) {
-        this.iframeWindow.postMessage(JSON.stringify(data), '*');
+        this.iframeWindow.postMessage(data, '*');
     }
 
     read (key) {

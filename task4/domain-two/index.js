@@ -1,5 +1,5 @@
 window.addEventListener('message', event => {
-    const data = JSON.parse(event.data);
+    const data = event.data;
 
     let response;
 
@@ -60,5 +60,5 @@ window.addEventListener('message', event => {
         }
     }
 
-    window.parent.postMessage(JSON.stringify(response), '*');
+    window.parent.postMessage(response, '*');
 });
